@@ -30,3 +30,54 @@ A simple python library to extract pages and posts information from https://www.
   'mark': ''},
   ...]
 ```
+
+## PttPage
+
+```
+[
+	{
+		"url": str,
+		"post_id": str,
+		"timestamp": str,  # unix time
+		"title": str,      
+		"nrec": str,       # 推噓文相加總和
+		"author": str,
+		"mark":            # 標記
+	},
+	...
+]
+```
+
+## PttPost
+
+```
+{
+	"article_id": str,
+    "article_title": str,
+    "author": str,
+    "board": str,
+    "content": str,
+    "timestamp": int,
+    "ip": str,           # ipv4 address 
+    "ip_country": str,   # ip <-> country mapping
+    "message_count": {
+         "all": str,     # 推、噓、箭頭總數
+         "boo": str,     # 噓文
+         "count": str,   # 推 - 噓文
+         "neutral": str, # 箭頭
+         "push": str,    # 推文
+    },
+    "messages": [
+    	{
+    		"push_tag": str, # 評論符號
+    		"push_userid": str,
+    		"push_content": str,
+    		"push_ipdatetime # ip 與時間（無日期）
+    	}
+    ],
+    "url": str,
+    "is_404": 是否刪文,
+}
+
+```
+
